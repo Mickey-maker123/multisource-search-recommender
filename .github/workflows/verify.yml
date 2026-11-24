@@ -22,5 +22,14 @@ jobs:
           $env:TEMP = $tempDir.FullName
           $env:TMP = $tempDir.FullName
           $env:JAVA_TOOL_OPTIONS = "-Djava.io.tmpdir=`"$($tempDir.FullName)`""
+          # Populate PDFBox's per-user Windows font cache with the bundled synthetic PDF.
+          # The ordinary import tests below retain the 30-second per-document limit.
+          mvn -B -f engine/pom.xml -DskipTests package
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $probe = Join-Path $tempDir.FullName "pdf-probe.json"
+          $timer = [Diagnostics.Stopwatch]::StartNew()
+          java -Xmx256m -cp engine/target/engine.jar local.federated.engine.ParserWorker fixtures/d1/files/sample.pdf application/pdf $probe
+          if ($LASTEXITCODE -ne 0 -or (Get-Content -Raw $probe | ConvertFrom-Json).state -ne "ready") { throw "PDF initialization failed" }
+          Write-Host "Initial PDF parse (seconds):" $timer.Elapsed.TotalSeconds
           mvn -B -f engine/pom.xml clean verify
       - run: python -m unittest discover -s model-service

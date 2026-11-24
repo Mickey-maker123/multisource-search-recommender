@@ -20,7 +20,8 @@ class FileImporterTest {
             var importer=new FileImporter(store,Path.of("../fixtures/d1/files"),temp.resolve("work"),IngestionTest.ALICE);
             for(var spec:new String[][]{{"txt","text/plain"},{"md","text/markdown"},{"pdf","application/pdf"},{"docx","application/vnd.openxmlformats-officedocument.wordprocessingml.document"}}) {
                 store.apply(file(spec[0],spec[1]));String key="demo:posts:"+spec[0];
-                assertEquals("ready",importer.parse(key,"sample."+spec[0]));
+                var state = importer.parse(key,"sample."+spec[0]);
+                assertEquals("ready",state,"sample." + spec[0] + ": " + store.status(key).path("code").asText());
                 var part=store.status(key).path("derived").get(0);
                 assertFalse(part.path("text").asText().isBlank());assertTrue(part.path("location").has("uri"));
                 if(spec[0].equals("pdf")){assertEquals(1,part.path("location").path("page").asInt());assertTrue(part.path("text").asText().contains("Synthetic PDF"));}
