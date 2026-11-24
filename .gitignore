@@ -1,0 +1,15 @@
+.local/
+.env
+.env.*
+!.env.example
+engine/target/
+runtime/
+lib/
+dist/
+.venv/
+__pycache__/
+*.pyc
+*.log
+*.mv.db
+.vscode/
+.idea/

@@ -1,0 +1,13 @@
+[
+  {
+    "native_id": "case-001",
+    "version": 1,
+    "title": "模拟业务记录",
+    "body": "模拟业务记录，状态：open。",
+    "category": "demo",
+    "status": "open",
+    "updated_at": "2026-11-05T00:00:00Z",
+    "acl_group": "research",
+    "deleted": false
+  }
+]

@@ -1,0 +1,834 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Independent engine",
+    "version": "1.1.0-d2"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:18080"
+    }
+  ],
+  "paths": {
+    "/api/engine/v1/items:batch": {
+      "post": {
+        "operationId": "ItemsBatch",
+        "security": [
+          {
+            "engineBearer": []
+          }
+        ],
+        "description": "D2: items:batch applies trusted source writes in deployment domain; other business capabilities return 503.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../v1/schema.json#/$defs/ItemsBatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Implemented for items:batch in D2; other routes remain unavailable.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/BatchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Version or idempotency conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Body exceeds 1 MiB",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Semantic validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Busy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Capability not ready or dependency unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/engine/v1/users:batch": {
+      "post": {
+        "operationId": "UsersBatch",
+        "security": [
+          {
+            "engineBearer": []
+          }
+        ],
+        "description": "D2: items:batch applies trusted source writes in deployment domain; other business capabilities return 503.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../v1/schema.json#/$defs/UsersBatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Implemented for items:batch in D2; other routes remain unavailable.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/BatchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Version or idempotency conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Body exceeds 1 MiB",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Semantic validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Busy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Capability not ready or dependency unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/engine/v1/events:batch": {
+      "post": {
+        "operationId": "EventsBatch",
+        "security": [
+          {
+            "engineBearer": []
+          }
+        ],
+        "description": "D2: items:batch applies trusted source writes in deployment domain; other business capabilities return 503.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../v1/schema.json#/$defs/EventsBatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Implemented for items:batch in D2; other routes remain unavailable.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/BatchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Version or idempotency conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Body exceeds 1 MiB",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Semantic validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Busy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Capability not ready or dependency unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/engine/v1/search": {
+      "post": {
+        "operationId": "Search",
+        "security": [
+          {
+            "engineBearer": []
+          }
+        ],
+        "description": "D2: items:batch applies trusted source writes in deployment domain; other business capabilities return 503.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../v1/schema.json#/$defs/Search"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Implemented for items:batch in D2; other routes remain unavailable.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/SearchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Version or idempotency conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Body exceeds 1 MiB",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Semantic validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Busy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Capability not ready or dependency unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/engine/v1/recommendations": {
+      "post": {
+        "operationId": "Recommendations",
+        "security": [
+          {
+            "engineBearer": []
+          }
+        ],
+        "description": "D2: items:batch applies trusted source writes in deployment domain; other business capabilities return 503.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../v1/schema.json#/$defs/Recommendations"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Implemented for items:batch in D2; other routes remain unavailable.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/SearchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Version or idempotency conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Body exceeds 1 MiB",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Semantic validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Busy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Capability not ready or dependency unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/engine/v1/analyze": {
+      "post": {
+        "operationId": "Analyze",
+        "security": [
+          {
+            "engineBearer": []
+          }
+        ],
+        "description": "D2: items:batch applies trusted source writes in deployment domain; other business capabilities return 503.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../v1/schema.json#/$defs/Analyze"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Implemented for items:batch in D2; other routes remain unavailable.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/AnalyzeResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Version or idempotency conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Body exceeds 1 MiB",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Semantic validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Busy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Capability not ready or dependency unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/engine/v1/health": {
+      "get": {
+        "operationId": "Health",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Process alive; inspect ready and capabilities separately",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "schemaVersion": {
+                      "const": "1.0"
+                    },
+                    "status": {
+                      "const": "ok"
+                    },
+                    "stage": {
+                      "const": "D2"
+                    },
+                    "ready": {
+                      "const": false
+                    },
+                    "capabilities": {
+                      "type": "object",
+                      "properties": {
+                        "health": {
+                          "type": "boolean"
+                        },
+                        "ingestion": {
+                          "const": true
+                        },
+                        "search": {
+                          "type": "boolean"
+                        },
+                        "personalization": {
+                          "type": "boolean"
+                        },
+                        "analysis": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "health",
+                        "ingestion",
+                        "search",
+                        "personalization",
+                        "analysis"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "dependencies": {
+                      "const": "embedded_store"
+                    }
+                  },
+                  "required": [
+                    "schemaVersion",
+                    "status",
+                    "stage",
+                    "ready",
+                    "capabilities",
+                    "dependencies"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        },
+        "description": "D2 runtime state; process alive and ingestion available; full engine ready remains false."
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "engineBearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "D1 admin bootstrap only; not an end-user identity token"
+      }
+    }
+  }
+}

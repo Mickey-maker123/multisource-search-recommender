@@ -1,0 +1,306 @@
+{
+  "synthetic": true,
+  "description": "Manually assigned topic relevance; calibration and heldout splits fixed before execution. No production superiority claim.",
+  "queries": [
+    {
+      "id": "offline-1",
+      "query": "离线部署",
+      "relevant": [
+        "demo:posts:offline-posts",
+        "demo:files:offline-files",
+        "demo:business:offline-business"
+      ],
+      "split": "calibration"
+    },
+    {
+      "id": "offline-2",
+      "query": "内网安装依赖",
+      "relevant": [
+        "demo:posts:offline-posts",
+        "demo:files:offline-files",
+        "demo:business:offline-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "offline-3",
+      "query": "没有互联网怎样安装检索程序",
+      "relevant": [
+        "demo:posts:offline-posts",
+        "demo:files:offline-files",
+        "demo:business:offline-business"
+      ],
+      "split": "calibration"
+    },
+    {
+      "id": "offline-4",
+      "query": "固定模型权重在哪里配置",
+      "relevant": [
+        "demo:posts:offline-posts",
+        "demo:files:offline-files",
+        "demo:business:offline-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "offline-5",
+      "query": "准备离线运行环境",
+      "relevant": [
+        "demo:posts:offline-posts",
+        "demo:files:offline-files",
+        "demo:business:offline-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "acl-1",
+      "query": "访问权限",
+      "relevant": [
+        "demo:posts:acl-posts",
+        "demo:files:acl-files",
+        "demo:business:acl-business"
+      ],
+      "split": "calibration"
+    },
+    {
+      "id": "acl-2",
+      "query": "附件群组授权",
+      "relevant": [
+        "demo:posts:acl-posts",
+        "demo:files:acl-files",
+        "demo:business:acl-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "acl-3",
+      "query": "怎样防止未授权用户读取资料",
+      "relevant": [
+        "demo:posts:acl-posts",
+        "demo:files:acl-files",
+        "demo:business:acl-business"
+      ],
+      "split": "calibration"
+    },
+    {
+      "id": "acl-4",
+      "query": "撤权以后还能下载附件吗",
+      "relevant": [
+        "demo:posts:acl-posts",
+        "demo:files:acl-files",
+        "demo:business:acl-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "acl-5",
+      "query": "父对象权限如何限制子附件",
+      "relevant": [
+        "demo:posts:acl-posts",
+        "demo:files:acl-files",
+        "demo:business:acl-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "backup-1",
+      "query": "备份恢复",
+      "relevant": [
+        "demo:posts:backup-posts",
+        "demo:files:backup-files",
+        "demo:business:backup-business"
+      ],
+      "split": "calibration"
+    },
+    {
+      "id": "backup-2",
+      "query": "数据库副本还原",
+      "relevant": [
+        "demo:posts:backup-posts",
+        "demo:files:backup-files",
+        "demo:business:backup-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "backup-3",
+      "query": "机器故障后怎样找回资料",
+      "relevant": [
+        "demo:posts:backup-posts",
+        "demo:files:backup-files",
+        "demo:business:backup-business"
+      ],
+      "split": "calibration"
+    },
+    {
+      "id": "backup-4",
+      "query": "定期保存数据以便恢复",
+      "relevant": [
+        "demo:posts:backup-posts",
+        "demo:files:backup-files",
+        "demo:business:backup-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "backup-5",
+      "query": "恢复演练检查副本完整性",
+      "relevant": [
+        "demo:posts:backup-posts",
+        "demo:files:backup-files",
+        "demo:business:backup-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "incident-1",
+      "query": "应急处置",
+      "relevant": [
+        "demo:posts:incident-posts",
+        "demo:files:incident-files",
+        "demo:business:incident-business"
+      ],
+      "split": "calibration"
+    },
+    {
+      "id": "incident-2",
+      "query": "安全事件协同响应",
+      "relevant": [
+        "demo:posts:incident-posts",
+        "demo:files:incident-files",
+        "demo:business:incident-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "incident-3",
+      "query": "发生攻击后先隔离哪台设备",
+      "relevant": [
+        "demo:posts:incident-posts",
+        "demo:files:incident-files",
+        "demo:business:incident-business"
+      ],
+      "split": "calibration"
+    },
+    {
+      "id": "incident-4",
+      "query": "如何调查入侵路径",
+      "relevant": [
+        "demo:posts:incident-posts",
+        "demo:files:incident-files",
+        "demo:business:incident-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "incident-5",
+      "query": "安全事故怎样安排处置负责人",
+      "relevant": [
+        "demo:posts:incident-posts",
+        "demo:files:incident-files",
+        "demo:business:incident-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "audit-1",
+      "query": "日志审计",
+      "relevant": [
+        "demo:posts:audit-posts",
+        "demo:files:audit-files",
+        "demo:business:audit-business"
+      ],
+      "split": "calibration"
+    },
+    {
+      "id": "audit-2",
+      "query": "操作记录溯源",
+      "relevant": [
+        "demo:posts:audit-posts",
+        "demo:files:audit-files",
+        "demo:business:audit-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "audit-3",
+      "query": "怎样追踪谁使用了资料",
+      "relevant": [
+        "demo:posts:audit-posts",
+        "demo:files:audit-files",
+        "demo:business:audit-business"
+      ],
+      "split": "calibration"
+    },
+    {
+      "id": "audit-4",
+      "query": "异常行为需要哪些审计证据",
+      "relevant": [
+        "demo:posts:audit-posts",
+        "demo:files:audit-files",
+        "demo:business:audit-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "audit-5",
+      "query": "记录操作者和操作时间",
+      "relevant": [
+        "demo:posts:audit-posts",
+        "demo:files:audit-files",
+        "demo:business:audit-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "version-1",
+      "query": "版本删除",
+      "relevant": [
+        "demo:posts:version-posts",
+        "demo:files:version-files",
+        "demo:business:version-business"
+      ],
+      "split": "calibration"
+    },
+    {
+      "id": "version-2",
+      "query": "tombstone 幂等去重",
+      "relevant": [
+        "demo:posts:version-posts",
+        "demo:files:version-files",
+        "demo:business:version-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "version-3",
+      "query": "如何防止旧任务复活已删除对象",
+      "relevant": [
+        "demo:posts:version-posts",
+        "demo:files:version-files",
+        "demo:business:version-business"
+      ],
+      "split": "calibration"
+    },
+    {
+      "id": "version-4",
+      "query": "乱序更新为什么不能覆盖新资料",
+      "relevant": [
+        "demo:posts:version-posts",
+        "demo:files:version-files",
+        "demo:business:version-business"
+      ],
+      "split": "heldout"
+    },
+    {
+      "id": "version-5",
+      "query": "删除标记和递增版本如何配合",
+      "relevant": [
+        "demo:posts:version-posts",
+        "demo:files:version-files",
+        "demo:business:version-business"
+      ],
+      "split": "heldout"
+    }
+  ]
+}

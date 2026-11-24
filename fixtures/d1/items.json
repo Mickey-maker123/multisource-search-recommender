@@ -1,0 +1,185 @@
+{
+  "schemaVersion": "1.0",
+  "items": [
+    {
+      "object": {
+        "domain": "demo",
+        "source": "posts",
+        "nativeId": "post-001"
+      },
+      "version": 1,
+      "type": "post",
+      "deleted": false,
+      "updatedAt": "2026-11-05T00:00:00Z",
+      "title": "模拟样本 post-001",
+      "text": "模拟帖子：内网资料检索与访问权限。",
+      "mediaType": "text/markdown",
+      "location": {
+        "uri": "engine-source://demo/posts/post-001"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "mixed",
+      "fields": {
+        "category": "demo",
+        "status": "open"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "files",
+        "nativeId": "txt-001"
+      },
+      "version": 1,
+      "type": "document",
+      "deleted": false,
+      "updatedAt": "2026-11-05T00:00:00Z",
+      "title": "模拟样本 txt-001",
+      "text": "模拟TXT：离线部署步骤。",
+      "mediaType": "text/plain",
+      "location": {
+        "uri": "engine-source://demo/files/txt-001"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "mixed",
+      "fields": {
+        "category": "demo",
+        "status": "open"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "files",
+        "nativeId": "md-001"
+      },
+      "version": 1,
+      "type": "document",
+      "deleted": false,
+      "updatedAt": "2026-11-05T00:00:00Z",
+      "title": "模拟样本 md-001",
+      "text": "# 模拟Markdown\n资料必须按群组授权。",
+      "mediaType": "text/markdown",
+      "location": {
+        "uri": "engine-source://demo/files/md-001"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "mixed",
+      "fields": {
+        "category": "demo",
+        "status": "open"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "files",
+        "nativeId": "pdf-001"
+      },
+      "version": 1,
+      "type": "document",
+      "deleted": false,
+      "updatedAt": "2026-11-05T00:00:00Z",
+      "title": "模拟样本 pdf-001",
+      "text": "Synthetic PDF: offline search.",
+      "mediaType": "application/pdf",
+      "location": {
+        "uri": "engine-source://demo/files/pdf-001"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "mixed",
+      "fields": {
+        "category": "demo",
+        "status": "open"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "files",
+        "nativeId": "docx-001"
+      },
+      "version": 1,
+      "type": "document",
+      "deleted": false,
+      "updatedAt": "2026-11-05T00:00:00Z",
+      "title": "模拟样本 docx-001",
+      "text": "模拟DOCX：跨源资料来源定位。",
+      "mediaType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "location": {
+        "uri": "engine-source://demo/files/docx-001"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "mixed",
+      "fields": {
+        "category": "demo",
+        "status": "open"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "business",
+        "nativeId": "case-001"
+      },
+      "version": 1,
+      "type": "record",
+      "deleted": false,
+      "updatedAt": "2026-11-05T00:00:00Z",
+      "title": "模拟样本 case-001",
+      "text": "模拟业务记录，状态：open。",
+      "mediaType": "application/vnd.engine.business-record+json",
+      "location": {
+        "uri": "engine-source://demo/business/case-001"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "mixed",
+      "fields": {
+        "category": "demo",
+        "status": "open"
+      }
+    }
+  ]
+}

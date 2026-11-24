@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0",
+  "events": [
+    {
+      "eventId": "event-1",
+      "schemaVersion": "1.0",
+      "domain": "demo",
+      "source": "posts",
+      "userId": "alice",
+      "object": {
+        "domain": "demo",
+        "source": "posts",
+        "nativeId": "post-001"
+      },
+      "action": "open",
+      "sourceAction": "open",
+      "occurredAt": "2026-11-05T00:00:00Z"
+    },
+    {
+      "eventId": "event-2",
+      "schemaVersion": "1.0",
+      "domain": "demo",
+      "source": "posts",
+      "userId": "alice",
+      "object": {
+        "domain": "demo",
+        "source": "posts",
+        "nativeId": "post-001"
+      },
+      "action": "consume",
+      "sourceAction": "consume",
+      "occurredAt": "2026-11-05T00:00:01Z",
+      "effectiveMs": 45000,
+      "completion": 0.8
+    },
+    {
+      "eventId": "event-3",
+      "schemaVersion": "1.0",
+      "domain": "demo",
+      "source": "posts",
+      "userId": "alice",
+      "object": {
+        "domain": "demo",
+        "source": "posts",
+        "nativeId": "post-001"
+      },
+      "action": "download",
+      "sourceAction": "download",
+      "occurredAt": "2026-11-05T00:00:02Z"
+    },
+    {
+      "eventId": "event-4",
+      "schemaVersion": "1.0",
+      "domain": "demo",
+      "source": "posts",
+      "userId": "alice",
+      "object": {
+        "domain": "demo",
+        "source": "posts",
+        "nativeId": "post-001"
+      },
+      "action": "save",
+      "sourceAction": "save",
+      "occurredAt": "2026-11-05T00:00:03Z"
+    },
+    {
+      "eventId": "event-5",
+      "schemaVersion": "1.0",
+      "domain": "demo",
+      "source": "posts",
+      "userId": "alice",
+      "object": {
+        "domain": "demo",
+        "source": "posts",
+        "nativeId": "post-001"
+      },
+      "action": "undo",
+      "sourceAction": "undo",
+      "occurredAt": "2026-11-05T00:00:04Z",
+      "undoOf": "event-4"
+    }
+  ]
+}

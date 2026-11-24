@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:engine:source-content:1.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "object",
+    "version",
+    "offset",
+    "limit"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.1"
+    },
+    "object": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domain",
+        "source",
+        "nativeId"
+      ],
+      "properties": {
+        "domain": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$"
+        },
+        "source": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$"
+        },
+        "nativeId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$"
+        }
+      }
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "offset": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100000
+    },
+    "limit": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 20
+    },
+    "contentGuard": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "anchor": {
+      "type": "object",
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "uri",
+          "maxLength": 2048
+        },
+        "page": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "paragraph": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "charStart": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "charEnd": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rowKey": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "timeStartMs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "timeEndMs": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "uri"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "if": {
+    "properties": {
+      "offset": {
+        "minimum": 1
+      }
+    }
+  },
+  "then": {
+    "required": [
+      "contentGuard"
+    ]
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "anchor"
+        ]
+      },
+      "then": {
+        "properties": {
+          "offset": {
+            "const": 0
+          }
+        }
+      }
+    }
+  ]
+}

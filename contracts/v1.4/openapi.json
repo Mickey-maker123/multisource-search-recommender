@@ -1,0 +1,1002 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Independent engine",
+    "version": "1.4.0-d5"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:18080"
+    }
+  ],
+  "paths": {
+    "/api/engine/v1/items:batch": {
+      "post": {
+        "operationId": "ItemsBatch",
+        "security": [
+          {
+            "engineBearer": []
+          }
+        ],
+        "description": "Versioned independent content ingestion with source-domain validation.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../v1/schema.json#/$defs/ItemsBatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Per-item ingestion outcomes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/BatchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Version or idempotency conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Body exceeds 1 MiB",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Semantic validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Busy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Capability not ready or dependency unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/engine/v1/users:batch": {
+      "post": {
+        "operationId": "UsersBatch",
+        "security": [
+          {
+            "engineBearer": []
+          }
+        ],
+        "description": "Administrator supplies versioned deployment users and explicit source-local identities. Managed active/groups are authoritative for queries.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../v1/schema.json#/$defs/UsersBatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Per-user version/idempotency/conflict results.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/BatchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Version or idempotency conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Body exceeds 1 MiB",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Semantic validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Busy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Capability not ready or dependency unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/engine/v1/events:batch": {
+      "post": {
+        "operationId": "EventsBatch",
+        "security": [
+          {
+            "engineBearer": []
+          },
+          {
+            "queryBearer": []
+          }
+        ],
+        "description": "Administrator adapts canonical users or public anonymous sessions. Query tokens may submit own managed user events. Immutable facts, event-id idempotency and same-owner undo are enforced.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../v1/schema.json#/$defs/EventsBatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Per-event applied/duplicate/rejected outcomes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/BatchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Version or idempotency conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Body exceeds 1 MiB",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Semantic validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Busy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Capability not ready or dependency unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/engine/v1/search": {
+      "post": {
+        "operationId": "Search",
+        "security": [
+          {
+            "queryBearer": []
+          }
+        ],
+        "description": "D3 real BM25/vector/RRF search, filters, signed 30-minute cursor and source locations. Auth comes from trusted identity config. ES failure returns 503; hybrid model failure explicitly degrades to keyword.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../v1/schema.json#/$defs/Search"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Implemented: current authorized source results only.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/SearchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Version or idempotency conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Body exceeds 1 MiB",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Semantic validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Busy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Capability not ready or dependency unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/engine/v1/recommendations": {
+      "post": {
+        "operationId": "Recommendations",
+        "security": [
+          {
+            "queryBearer": []
+          }
+        ],
+        "description": "Personal or related recommendations with current permissions, explicit preference/subscription and effective behavior reasons. Task context is request-scoped. Cursor binds profile revision.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../v1/schema.json#/$defs/Recommendations"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Authorized recommendation results using the frozen SearchResult schema.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/SearchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Version or idempotency conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Body exceeds 1 MiB",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Semantic validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Busy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Capability not ready or dependency unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/engine/v1/analyze": {
+      "post": {
+        "operationId": "Analyze",
+        "security": [
+          {
+            "queryBearer": []
+          }
+        ],
+        "description": "D5 exact current authorized root-object count/grouping and outgoing explicit relations. Group fields source/type/category/status only. Group keys use value:<literal> or missing. Maximum 100 groups, overflow fails with ANALYSIS_LIMIT_EXCEEDED. Relation filters apply to targets. Source state and ancestor ACLs are read under the ingestion lock.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../v1/schema.json#/$defs/Analyze"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Exact authorized analysis result from current source state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/AnalyzeResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Version or idempotency conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Body exceeds 1 MiB",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Semantic validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Busy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Capability not ready or dependency unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Origin missing, deleted or unauthorized; identical response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/engine/v1/health": {
+      "get": {
+        "operationId": "Health",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Process alive; inspect ready and capabilities separately",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "schemaVersion": {
+                      "const": "1.0"
+                    },
+                    "status": {
+                      "const": "ok"
+                    },
+                    "stage": {
+                      "const": "D5"
+                    },
+                    "ready": {
+                      "const": false
+                    },
+                    "capabilities": {
+                      "type": "object",
+                      "properties": {
+                        "health": {
+                          "type": "boolean"
+                        },
+                        "ingestion": {
+                          "const": true
+                        },
+                        "search": {
+                          "type": "boolean"
+                        },
+                        "personalization": {
+                          "type": "boolean"
+                        },
+                        "analysis": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "health",
+                        "ingestion",
+                        "search",
+                        "personalization",
+                        "analysis"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "dependencies": {
+                      "const": "embedded_store"
+                    }
+                  },
+                  "required": [
+                    "schemaVersion",
+                    "status",
+                    "stage",
+                    "ready",
+                    "capabilities",
+                    "dependencies"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        },
+        "description": "D5 exposes ingestion, search, personalization, controlled analysis and local demo. Full release readiness is checked in D6-D7."
+      }
+    },
+    "/api/engine/v1/source": {
+      "post": {
+        "operationId": "Source",
+        "security": [
+          {
+            "queryBearer": []
+          }
+        ],
+        "description": "D5 current authorized source object and source location. Rechecks current managed identity and ancestor permissions. Filters inaccessible outgoing relation references. Returns metadata/text only; never executes or serves arbitrary local files.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../v1/schema.json#/$defs/ObjectRef"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Current source object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "schemaVersion",
+                    "requestId",
+                    "item"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "schemaVersion": {
+                      "const": "1.0"
+                    },
+                    "requestId": {
+                      "type": "string"
+                    },
+                    "item": {
+                      "$ref": "../v1/schema.json#/$defs/Item"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Version or idempotency conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Body exceeds 1 MiB",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Semantic validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Busy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Capability not ready or dependency unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Origin missing, deleted or unauthorized; identical response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../v1/schema.json#/$defs/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "engineBearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "D1 admin bootstrap only; not an end-user identity token"
+      },
+      "queryBearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Trusted local identity token; operator-maintained private SHA-256 mapping. Never accept user/group identity from the body."
+      }
+    }
+  }
+}

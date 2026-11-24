@@ -1,0 +1,13 @@
+[
+  {
+    "native_id": "post-001",
+    "version": 1,
+    "title": "模拟帖子",
+    "body": "模拟帖子：内网资料检索与访问权限。",
+    "category": "demo",
+    "status": "open",
+    "updated_at": "2026-11-05T00:00:00Z",
+    "acl_group": "research",
+    "deleted": false
+  }
+]

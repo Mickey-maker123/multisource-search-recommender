@@ -1,0 +1,10 @@
+Multi-source Search Recommender
+Version 0.2.0
+
+Original project source and documentation are offered under the Apache License,
+Version 2.0. Third-party components are subject to their respective licenses.
+See third-party/components.json for coordinates, upstream source locations and
+artifact checksums. Original third-party notices are included under third-party/.
+H2 sources distributed by its authors are available at the exact-version source
+URL in that file; this package uses H2 under MPL-2.0. MySQL Connector/J,
+Elasticsearch distributions, model weights, JDK and Python are obtained separately.

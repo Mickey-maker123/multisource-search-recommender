@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "users": [
+    {
+      "userId": "alice",
+      "version": 1,
+      "active": true,
+      "identities": [
+        {
+          "domain": "demo",
+          "source": "posts",
+          "localUserId": "100"
+        },
+        {
+          "domain": "demo",
+          "source": "business",
+          "localUserId": "100"
+        }
+      ],
+      "groups": [
+        "research"
+      ],
+      "preferences": [
+        "离线部署"
+      ],
+      "subscriptions": [],
+      "allowBehaviorProfile": true
+    },
+    {
+      "userId": "bob",
+      "version": 1,
+      "active": true,
+      "identities": [
+        {
+          "domain": "demo",
+          "source": "files",
+          "localUserId": "100"
+        }
+      ],
+      "groups": [],
+      "preferences": [
+        "权限"
+      ],
+      "subscriptions": [],
+      "allowBehaviorProfile": true
+    }
+  ]
+}

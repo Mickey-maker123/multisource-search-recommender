@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "1.0",
+  "users": [
+    {
+      "userId": "alice",
+      "version": 1,
+      "active": true,
+      "identities": [
+        {
+          "domain": "demo",
+          "source": "posts",
+          "localUserId": "alice-local"
+        },
+        {
+          "domain": "demo",
+          "source": "files",
+          "localUserId": "alice-local"
+        },
+        {
+          "domain": "demo",
+          "source": "business",
+          "localUserId": "alice-local"
+        }
+      ],
+      "groups": [
+        "research"
+      ],
+      "preferences": [
+        "离线部署"
+      ],
+      "subscriptions": [],
+      "allowBehaviorProfile": true
+    },
+    {
+      "userId": "bob",
+      "version": 1,
+      "active": true,
+      "identities": [
+        {
+          "domain": "demo",
+          "source": "posts",
+          "localUserId": "bob-local"
+        },
+        {
+          "domain": "demo",
+          "source": "files",
+          "localUserId": "bob-local"
+        },
+        {
+          "domain": "demo",
+          "source": "business",
+          "localUserId": "bob-local"
+        }
+      ],
+      "groups": [
+        "research"
+      ],
+      "preferences": [
+        "日志审计"
+      ],
+      "subscriptions": [],
+      "allowBehaviorProfile": true
+    },
+    {
+      "userId": "cold",
+      "version": 1,
+      "active": true,
+      "identities": [
+        {
+          "domain": "demo",
+          "source": "posts",
+          "localUserId": "cold-local"
+        },
+        {
+          "domain": "demo",
+          "source": "files",
+          "localUserId": "cold-local"
+        },
+        {
+          "domain": "demo",
+          "source": "business",
+          "localUserId": "cold-local"
+        }
+      ],
+      "groups": [
+        "research"
+      ],
+      "preferences": [],
+      "subscriptions": [],
+      "allowBehaviorProfile": true
+    }
+  ]
+}

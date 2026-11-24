@@ -1,0 +1,23 @@
+{
+  "version": "engine-behavior-v1",
+  "historyDays": 30,
+  "halfLifeDays": 7,
+  "maxHistoryEvents": 5000,
+  "consumeMinEffectiveMs": 30000,
+  "consumeMinCompletion": 0.5,
+  "communitySources": ["posts"],
+  "communityCommentWeight": 0.5,
+  "weights": {
+    "impression": 0,
+    "open": 0,
+    "download": 0,
+    "consume": 1,
+    "save": 3,
+    "subscribe": 4,
+    "endorse": 2,
+    "dismiss": -3,
+    "not_helpful": -3,
+    "cite": 3,
+    "use": 3
+  }
+}

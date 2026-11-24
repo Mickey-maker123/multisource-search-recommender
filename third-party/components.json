@@ -1,0 +1,201 @@
+[
+  {
+    "coordinate": "org.jsoup:jsoup:1.21.2",
+    "licenses": [
+      "The MIT License"
+    ],
+    "source": "https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.21.2/jsoup-1.21.2-sources.jar",
+    "jarSha256": "f05496e255734759f0d4b5632da7b24f81313147c78c69e90ad045d096191344"
+  },
+  {
+    "coordinate": "org.apache.commons:commons-csv:1.14.1",
+    "licenses": [],
+    "source": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-csv/1.14.1/commons-csv-1.14.1-sources.jar",
+    "jarSha256": "32be0e1e76673092f5d12cb790bd2acb6c2ab04c4ea6efc69ea5ee17911c24fe"
+  },
+  {
+    "coordinate": "commons-io:commons-io:2.20.0",
+    "licenses": [],
+    "source": "https://repo.maven.apache.org/maven2/commons-io/commons-io/2.20.0/commons-io-2.20.0-sources.jar",
+    "jarSha256": "df90bba0fe3cb586b7f164e78fe8f8f4da3f2dd5c27fa645f888100ccc25dd72"
+  },
+  {
+    "coordinate": "commons-codec:commons-codec:1.19.0",
+    "licenses": [],
+    "source": "https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.19.0/commons-codec-1.19.0-sources.jar",
+    "jarSha256": "5c3881e4f556855e9c532927ee0c9dfde94cc66760d5805c031a59887070af5f"
+  },
+  {
+    "coordinate": "org.apache.poi:poi-ooxml:5.4.1",
+    "licenses": [
+      "Apache License, Version 2.0"
+    ],
+    "source": "https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml/5.4.1/poi-ooxml-5.4.1-sources.jar",
+    "jarSha256": "fd200c9e6f74d704160a97e9d52041995ed87439454530001edd920688f19f53"
+  },
+  {
+    "coordinate": "org.apache.poi:poi:5.4.1",
+    "licenses": [
+      "Apache License, Version 2.0"
+    ],
+    "source": "https://repo.maven.apache.org/maven2/org/apache/poi/poi/5.4.1/poi-5.4.1-sources.jar",
+    "jarSha256": "da5abf42da4604c5a7bca38956af6e9d6f196d9b6d4cb7eabee4f480b580d505"
+  },
+  {
+    "coordinate": "org.apache.commons:commons-math3:3.6.1",
+    "licenses": [],
+    "source": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1-sources.jar",
+    "jarSha256": "1e56d7b058d28b65abd256b8458e3885b674c1d588fa43cd7d1cbb9c7ef2b308"
+  },
+  {
+    "coordinate": "com.zaxxer:SparseBitSet:1.3",
+    "licenses": [
+      "The Apache Software License, Version 2.0"
+    ],
+    "source": "https://repo.maven.apache.org/maven2/com/zaxxer/SparseBitSet/1.3/SparseBitSet-1.3-sources.jar",
+    "jarSha256": "f76b85adb0c00721ae267b7cfde4da7f71d3121cc2160c9fc00c0c89f8c53c8a"
+  },
+  {
+    "coordinate": "org.apache.poi:poi-ooxml-lite:5.4.1",
+    "licenses": [
+      "Apache License, Version 2.0"
+    ],
+    "source": "https://repo.maven.apache.org/maven2/org/apache/poi/poi-ooxml-lite/5.4.1/poi-ooxml-lite-5.4.1-sources.jar",
+    "jarSha256": "dc590461efdfcd4f27e2a892737979ab5e30b4132a7adfc7c9e56447b71a45b0"
+  },
+  {
+    "coordinate": "org.apache.xmlbeans:xmlbeans:5.3.0",
+    "licenses": [
+      "The Apache Software License, Version 2.0"
+    ],
+    "source": "https://repo.maven.apache.org/maven2/org/apache/xmlbeans/xmlbeans/5.3.0/xmlbeans-5.3.0-sources.jar",
+    "jarSha256": "6cc69da3b4d35b83c5e477cd4daba204e44109833e34af2b9a8a2c8788289917"
+  },
+  {
+    "coordinate": "org.apache.commons:commons-compress:1.27.1",
+    "licenses": [],
+    "source": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.27.1/commons-compress-1.27.1-sources.jar",
+    "jarSha256": "293d80f54b536b74095dcd7ea3cf0a29bbfc3402519281332495f4420d370d16"
+  },
+  {
+    "coordinate": "org.apache.commons:commons-lang3:3.16.0",
+    "licenses": [],
+    "source": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.16.0/commons-lang3-3.16.0-sources.jar",
+    "jarSha256": "08709dd74d602b705ce4017d26544210056a4ba583d5b20c09373406fe7a00f8"
+  },
+  {
+    "coordinate": "com.github.virtuald:curvesapi:1.08",
+    "licenses": [
+      "BSD License"
+    ],
+    "source": "https://repo.maven.apache.org/maven2/com/github/virtuald/curvesapi/1.08/curvesapi-1.08-sources.jar",
+    "jarSha256": "ad95b08b8bbf9d7d17e5e00814898fa23324f32bc5b62f1a37801e6a56ce0079"
+  },
+  {
+    "coordinate": "org.apache.logging.log4j:log4j-api:2.24.3",
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "source": "https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3-sources.jar",
+    "jarSha256": "5b4a0a0cd0e751ded431c162442bdbdd53328d1f8bb2bae5fc1bbeee0f66d80f"
+  },
+  {
+    "coordinate": "org.apache.commons:commons-collections4:4.4",
+    "licenses": [],
+    "source": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4-sources.jar",
+    "jarSha256": "1df8b9430b5c8ed143d7815e403e33ef5371b2400aadbe9bda0883762e0846d1"
+  },
+  {
+    "coordinate": "com.h2database:h2:2.3.232",
+    "licenses": [
+      "MPL 2.0",
+      "EPL 1.0"
+    ],
+    "source": "https://repo.maven.apache.org/maven2/com/h2database/h2/2.3.232/h2-2.3.232-sources.jar",
+    "jarSha256": "8dae62d22db8982c3dcb3826edb9c727c5d302063a67eef7d63d82de401f07d3"
+  },
+  {
+    "coordinate": "com.networknt:json-schema-validator:1.5.9",
+    "licenses": [
+      "Apache License Version 2.0"
+    ],
+    "source": "https://repo.maven.apache.org/maven2/com/networknt/json-schema-validator/1.5.9/json-schema-validator-1.5.9-sources.jar",
+    "jarSha256": "e0b8baeb78fd1ba027454ee3974d8a02f54447eaa510d3052820a7d2160d9ae4"
+  },
+  {
+    "coordinate": "com.ethlo.time:itu:1.14.0",
+    "licenses": [
+      "Apache License, Version 2.0"
+    ],
+    "source": "https://repo.maven.apache.org/maven2/com/ethlo/time/itu/1.14.0/itu-1.14.0-sources.jar",
+    "jarSha256": "5cf40ab0cc77828ab2b875b1f3ecd71c8295d7721933476abc2e08fddcea164a"
+  },
+  {
+    "coordinate": "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.18.3",
+    "licenses": [],
+    "source": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.3/jackson-dataformat-yaml-2.18.3-sources.jar",
+    "jarSha256": "3ca00e47cfcb43e79438ddcfc8fc735e9ebac3824fb7769138609be6bd56e483"
+  },
+  {
+    "coordinate": "org.yaml:snakeyaml:2.3",
+    "licenses": [
+      "Apache License, Version 2.0"
+    ],
+    "source": "https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/2.3/snakeyaml-2.3-sources.jar",
+    "jarSha256": "63a76fe66b652360bd4c2c107e6f0258daa7d4bb492008ba8c26fcd230ff9146"
+  },
+  {
+    "coordinate": "org.slf4j:slf4j-api:2.0.17",
+    "licenses": [],
+    "source": "https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17-sources.jar",
+    "jarSha256": "7b751d952061954d5abfed7181c1f645d336091b679891591d63329c622eb832"
+  },
+  {
+    "coordinate": "org.apache.pdfbox:pdfbox:3.0.5",
+    "licenses": [],
+    "source": "https://repo.maven.apache.org/maven2/org/apache/pdfbox/pdfbox/3.0.5/pdfbox-3.0.5-sources.jar",
+    "jarSha256": "f0e5d3a1e573c707e4fbcc2ee8e42ea8ca1d5261bdcb3a05a08d2118553c1e5a"
+  },
+  {
+    "coordinate": "org.apache.pdfbox:pdfbox-io:3.0.5",
+    "licenses": [],
+    "source": "https://repo.maven.apache.org/maven2/org/apache/pdfbox/pdfbox-io/3.0.5/pdfbox-io-3.0.5-sources.jar",
+    "jarSha256": "6df3f3b4db4fd55ef502847ea4e4ebc58e28908800e86eab031345efe219b705"
+  },
+  {
+    "coordinate": "org.apache.pdfbox:fontbox:3.0.5",
+    "licenses": [],
+    "source": "https://repo.maven.apache.org/maven2/org/apache/pdfbox/fontbox/3.0.5/fontbox-3.0.5-sources.jar",
+    "jarSha256": "e8a62be2df27a0d44191b6669c0b18df6efe5271232db8dcb8745d5d9774755b"
+  },
+  {
+    "coordinate": "commons-logging:commons-logging:1.3.5",
+    "licenses": [],
+    "source": "https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.3.5/commons-logging-1.3.5-sources.jar",
+    "jarSha256": "6d7a744e4027649fbb50895df9497d109f98c766a637062fe8d2eabbb3140ba4"
+  },
+  {
+    "coordinate": "com.fasterxml.jackson.core:jackson-databind:2.21.4",
+    "licenses": [
+      "The Apache Software License, Version 2.0"
+    ],
+    "source": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.21.4/jackson-databind-2.21.4-sources.jar",
+    "jarSha256": "3888e9e69ab66fbacaacc9aea0e9ffbf15368288e4aca468b024dba11c09fbf9"
+  },
+  {
+    "coordinate": "com.fasterxml.jackson.core:jackson-annotations:2.21",
+    "licenses": [
+      "The Apache Software License, Version 2.0"
+    ],
+    "source": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21-sources.jar",
+    "jarSha256": "53ca085f4a150f703f49e1aabd935bd03b43e1ea3d55d135438292af22cef56b"
+  },
+  {
+    "coordinate": "com.fasterxml.jackson.core:jackson-core:2.21.4",
+    "licenses": [
+      "The Apache Software License, Version 2.0"
+    ],
+    "source": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.21.4/jackson-core-2.21.4-sources.jar",
+    "jarSha256": "4b40a06396f239f8de2da57419adde6e94e5edc18a2171d471ea05eeed4e5c2d"
+  }
+]

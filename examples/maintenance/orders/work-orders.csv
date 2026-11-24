@@ -1,0 +1,3 @@
+workOrderId,equipmentId,status,title,action,version
+00017,A-01,待复核,设备 A 更换滤芯工单,为设备 A 更换演示滤芯并记录备件批号,1
+00018,B-02,已完成,设备 B 滤盒清洁工单,清洁设备 B 演示滤盒外壳并登记日期,1

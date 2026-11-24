@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "query": "离线部署",
+  "mode": "hybrid",
+  "pageSize": 10,
+  "filters": {
+    "sources": [
+      "files"
+    ]
+  }
+}

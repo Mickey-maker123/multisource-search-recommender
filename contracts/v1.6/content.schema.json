@@ -1,0 +1,334 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://engine.local/contracts/v1.6/content.schema.json",
+  "$defs": {
+    "ObjectRef": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$"
+        },
+        "source": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$"
+        },
+        "nativeId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$"
+        }
+      },
+      "required": [
+        "domain",
+        "source",
+        "nativeId"
+      ],
+      "additionalProperties": false
+    },
+    "Acl": {
+      "type": "object",
+      "properties": {
+        "public": {
+          "type": "boolean"
+        },
+        "users": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$"
+          },
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$"
+          },
+          "maxItems": 100,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "public",
+        "users",
+        "groups"
+      ],
+      "additionalProperties": false
+    },
+    "Location": {
+      "type": "object",
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "uri",
+          "maxLength": 2048
+        },
+        "page": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "paragraph": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "charStart": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "charEnd": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rowKey": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "timeStartMs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "timeEndMs": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "uri"
+      ],
+      "additionalProperties": false
+    },
+    "Item": {
+      "type": "object",
+      "properties": {
+        "object": {
+          "$ref": "#/$defs/ObjectRef"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "post",
+            "document",
+            "record",
+            "attachment",
+            "chunk"
+          ]
+        },
+        "deleted": {
+          "type": "boolean"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "text": {
+          "type": "string",
+          "maxLength": 20000
+        },
+        "mediaType": {
+          "type": "string",
+          "enum": [
+            "text/plain",
+            "text/markdown",
+            "application/pdf",
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "application/vnd.engine.business-record+json",
+            "text/html"
+          ]
+        },
+        "location": {
+          "$ref": "#/$defs/Location"
+        },
+        "parent": {
+          "$ref": "#/$defs/ObjectRef"
+        },
+        "acl": {
+          "$ref": "#/$defs/Acl"
+        },
+        "parseAllowed": {
+          "type": "boolean"
+        },
+        "language": {
+          "type": "string",
+          "enum": [
+            "zh",
+            "en",
+            "mixed"
+          ]
+        },
+        "relations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "parent",
+                  "attachment",
+                  "explicit"
+                ]
+              },
+              "target": {
+                "$ref": "#/$defs/ObjectRef"
+              }
+            },
+            "required": [
+              "kind",
+              "target"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 50,
+          "uniqueItems": true
+        },
+        "fields": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64
+            },
+            "status": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64
+            },
+            "occurredAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "schemaVersion": {
+          "const": "1.1"
+        },
+        "typedFields": {
+          "type": "object",
+          "maxProperties": 32,
+          "propertyNames": {
+            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$"
+          },
+          "additionalProperties": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "type",
+                  "value"
+                ],
+                "properties": {
+                  "type": {
+                    "const": "string"
+                  },
+                  "value": {
+                    "type": "string",
+                    "maxLength": 4096
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "type",
+                  "value"
+                ],
+                "properties": {
+                  "type": {
+                    "const": "decimal"
+                  },
+                  "value": {
+                    "type": "string",
+                    "pattern": "^-?(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "type",
+                  "value"
+                ],
+                "properties": {
+                  "type": {
+                    "const": "date"
+                  },
+                  "value": {
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "type",
+                  "value"
+                ],
+                "properties": {
+                  "type": {
+                    "const": "boolean"
+                  },
+                  "value": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "object",
+        "version",
+        "type",
+        "deleted",
+        "updatedAt",
+        "schemaVersion"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "deleted": {
+                "const": false
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "title",
+              "text",
+              "mediaType",
+              "location",
+              "acl",
+              "parseAllowed",
+              "language"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "$ref": "#/$defs/Item"
+}

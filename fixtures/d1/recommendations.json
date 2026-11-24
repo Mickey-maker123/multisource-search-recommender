@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "1.0",
+  "kind": "personal",
+  "pageSize": 10,
+  "task": {
+    "taskId": "task-1",
+    "text": "查找离线部署资料",
+    "expiresAt": "2026-11-05T12:00:00Z"
+  }
+}

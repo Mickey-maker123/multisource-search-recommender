@@ -1,0 +1,545 @@
+{
+  "schemaVersion": "1.0",
+  "items": [
+    {
+      "object": {
+        "domain": "demo",
+        "source": "posts",
+        "nativeId": "offline-posts"
+      },
+      "version": 1,
+      "type": "post",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟posts：离线部署",
+      "text": "离线部署与内网安装：准备运行依赖、固定模型权重和启动配置，没有互联网时也能安装检索程序。",
+      "mediaType": "text/markdown",
+      "location": {
+        "uri": "engine-source://demo/posts/offline-posts"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "offline",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "files",
+        "nativeId": "offline-files"
+      },
+      "version": 1,
+      "type": "document",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟files：离线部署",
+      "text": "离线部署与内网安装：准备运行依赖、固定模型权重和启动配置，没有互联网时也能安装检索程序。",
+      "mediaType": "text/plain",
+      "location": {
+        "uri": "engine-source://demo/files/offline-files"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "offline",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "business",
+        "nativeId": "offline-business"
+      },
+      "version": 1,
+      "type": "record",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟business：离线部署",
+      "text": "离线部署与内网安装：准备运行依赖、固定模型权重和启动配置，没有互联网时也能安装检索程序。",
+      "mediaType": "application/vnd.engine.business-record+json",
+      "location": {
+        "uri": "engine-source://demo/business/offline-business"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "offline",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "posts",
+        "nativeId": "acl-posts"
+      },
+      "version": 1,
+      "type": "post",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟posts：访问权限",
+      "text": "访问权限由群组和明确授权决定。附件必须复查父对象权限，撤权后停止返回正文，不允许越权读取。",
+      "mediaType": "text/markdown",
+      "location": {
+        "uri": "engine-source://demo/posts/acl-posts"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "acl",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "files",
+        "nativeId": "acl-files"
+      },
+      "version": 1,
+      "type": "document",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟files：访问权限",
+      "text": "访问权限由群组和明确授权决定。附件必须复查父对象权限，撤权后停止返回正文，不允许越权读取。",
+      "mediaType": "text/plain",
+      "location": {
+        "uri": "engine-source://demo/files/acl-files"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "acl",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "business",
+        "nativeId": "acl-business"
+      },
+      "version": 1,
+      "type": "record",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟business：访问权限",
+      "text": "访问权限由群组和明确授权决定。附件必须复查父对象权限，撤权后停止返回正文，不允许越权读取。",
+      "mediaType": "application/vnd.engine.business-record+json",
+      "location": {
+        "uri": "engine-source://demo/business/acl-business"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "acl",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "posts",
+        "nativeId": "backup-posts"
+      },
+      "version": 1,
+      "type": "post",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟posts：备份恢复",
+      "text": "备份恢复需要定期保存数据库副本，故障后从备份还原资料。演练恢复步骤并校验副本完整性。",
+      "mediaType": "text/markdown",
+      "location": {
+        "uri": "engine-source://demo/posts/backup-posts"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "backup",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "files",
+        "nativeId": "backup-files"
+      },
+      "version": 1,
+      "type": "document",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟files：备份恢复",
+      "text": "备份恢复需要定期保存数据库副本，故障后从备份还原资料。演练恢复步骤并校验副本完整性。",
+      "mediaType": "text/plain",
+      "location": {
+        "uri": "engine-source://demo/files/backup-files"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "backup",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "business",
+        "nativeId": "backup-business"
+      },
+      "version": 1,
+      "type": "record",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟business：备份恢复",
+      "text": "备份恢复需要定期保存数据库副本，故障后从备份还原资料。演练恢复步骤并校验副本完整性。",
+      "mediaType": "application/vnd.engine.business-record+json",
+      "location": {
+        "uri": "engine-source://demo/business/backup-business"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "backup",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "posts",
+        "nativeId": "incident-posts"
+      },
+      "version": 1,
+      "type": "post",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟posts：应急处置",
+      "text": "应急处置针对安全事件开展协同响应，先隔离受影响设备，再调查攻击路径并安排处置负责人。",
+      "mediaType": "text/markdown",
+      "location": {
+        "uri": "engine-source://demo/posts/incident-posts"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "incident",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "files",
+        "nativeId": "incident-files"
+      },
+      "version": 1,
+      "type": "document",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟files：应急处置",
+      "text": "应急处置针对安全事件开展协同响应，先隔离受影响设备，再调查攻击路径并安排处置负责人。",
+      "mediaType": "text/plain",
+      "location": {
+        "uri": "engine-source://demo/files/incident-files"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "incident",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "business",
+        "nativeId": "incident-business"
+      },
+      "version": 1,
+      "type": "record",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟business：应急处置",
+      "text": "应急处置针对安全事件开展协同响应，先隔离受影响设备，再调查攻击路径并安排处置负责人。",
+      "mediaType": "application/vnd.engine.business-record+json",
+      "location": {
+        "uri": "engine-source://demo/business/incident-business"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "incident",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "posts",
+        "nativeId": "audit-posts"
+      },
+      "version": 1,
+      "type": "post",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟posts：日志审计",
+      "text": "日志审计记录操作时间、操作者和来源。通过审计日志追踪资料使用路径，为异常行为提供溯源证据。",
+      "mediaType": "text/markdown",
+      "location": {
+        "uri": "engine-source://demo/posts/audit-posts"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "audit",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "files",
+        "nativeId": "audit-files"
+      },
+      "version": 1,
+      "type": "document",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟files：日志审计",
+      "text": "日志审计记录操作时间、操作者和来源。通过审计日志追踪资料使用路径，为异常行为提供溯源证据。",
+      "mediaType": "text/plain",
+      "location": {
+        "uri": "engine-source://demo/files/audit-files"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "audit",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "business",
+        "nativeId": "audit-business"
+      },
+      "version": 1,
+      "type": "record",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟business：日志审计",
+      "text": "日志审计记录操作时间、操作者和来源。通过审计日志追踪资料使用路径，为异常行为提供溯源证据。",
+      "mediaType": "application/vnd.engine.business-record+json",
+      "location": {
+        "uri": "engine-source://demo/business/audit-business"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "audit",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "posts",
+        "nativeId": "version-posts"
+      },
+      "version": 1,
+      "type": "post",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟posts：版本删除",
+      "text": "版本删除使用递增来源版本和永久删除标记 tombstone。幂等去重并拒绝乱序旧任务，避免删除对象被重新恢复。",
+      "mediaType": "text/markdown",
+      "location": {
+        "uri": "engine-source://demo/posts/version-posts"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "version",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "files",
+        "nativeId": "version-files"
+      },
+      "version": 1,
+      "type": "document",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟files：版本删除",
+      "text": "版本删除使用递增来源版本和永久删除标记 tombstone。幂等去重并拒绝乱序旧任务，避免删除对象被重新恢复。",
+      "mediaType": "text/plain",
+      "location": {
+        "uri": "engine-source://demo/files/version-files"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "version",
+        "status": "benchmark"
+      }
+    },
+    {
+      "object": {
+        "domain": "demo",
+        "source": "business",
+        "nativeId": "version-business"
+      },
+      "version": 1,
+      "type": "record",
+      "deleted": false,
+      "updatedAt": "2026-11-06T00:00:00Z",
+      "title": "模拟business：版本删除",
+      "text": "版本删除使用递增来源版本和永久删除标记 tombstone。幂等去重并拒绝乱序旧任务，避免删除对象被重新恢复。",
+      "mediaType": "application/vnd.engine.business-record+json",
+      "location": {
+        "uri": "engine-source://demo/business/version-business"
+      },
+      "acl": {
+        "public": false,
+        "users": [],
+        "groups": [
+          "research"
+        ]
+      },
+      "parseAllowed": true,
+      "language": "zh",
+      "fields": {
+        "category": "version",
+        "status": "benchmark"
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "events": [
+    {
+      "localUserId": "cold-local",
+      "event": {
+        "eventId": "save-offline-1",
+        "schemaVersion": "1.0",
+        "domain": "demo",
+        "source": "posts",
+        "object": {
+          "domain": "demo",
+          "source": "posts",
+          "nativeId": "offline-posts"
+        },
+        "action": "save",
+        "sourceAction": "bookmark",
+        "occurredAt": "2026-11-09T00:00:00Z"
+      }
+    }
+  ]
+}

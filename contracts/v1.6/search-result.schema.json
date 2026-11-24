@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://engine.local/contracts/v1.6/search-result.schema.json",
+  "$ref": "#/$defs/SearchResult",
+  "$defs": {
+    "SearchResult": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": "1.1"
+        },
+        "requestId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "items": {
+          "type": "array",
+          "maxItems": 50,
+          "items": {
+            "$ref": "#/$defs/ResultItem"
+          }
+        },
+        "nextCursor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2048
+        },
+        "hasMore": {
+          "type": "boolean"
+        },
+        "candidateLimit": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "degraded": {
+          "type": "boolean"
+        },
+        "degradedReasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "maxItems": 20,
+          "uniqueItems": true
+        },
+        "matchStatus": {
+          "type": "string",
+          "enum": [
+            "incomplete",
+            "no_results",
+            "keyword_results",
+            "low_semantic_match",
+            "low_term_support",
+            "semantic_results"
+          ]
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "requestId",
+        "items",
+        "nextCursor",
+        "hasMore",
+        "candidateLimit",
+        "degraded",
+        "degradedReasons",
+        "matchStatus"
+      ],
+      "additionalProperties": false
+    },
+    "ResultItem": {
+      "type": "object",
+      "properties": {
+        "item": {
+          "oneOf": [
+            {
+              "$ref": "../v1/schema.json#/$defs/Item"
+            },
+            {
+              "$ref": "content.schema.json#/$defs/Item"
+            }
+          ]
+        },
+        "score": {
+          "type": "number"
+        },
+        "channels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "keyword",
+              "vector",
+              "preference",
+              "task",
+              "related"
+            ]
+          },
+          "maxItems": 5,
+          "uniqueItems": true
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "maxItems": 20,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "item",
+        "score",
+        "channels",
+        "reasons"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

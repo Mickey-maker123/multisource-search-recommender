@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "1.0",
+  "files": [
+    {
+      "item": {
+        "object": {
+          "domain": "demo",
+          "source": "files",
+          "nativeId": "txt-001"
+        },
+        "version": 1,
+        "type": "document",
+        "deleted": false,
+        "updatedAt": "2026-11-05T00:00:00Z",
+        "title": "模拟样本 txt-001",
+        "text": "",
+        "mediaType": "text/plain",
+        "location": {
+          "uri": "engine-source://demo/files/txt-001"
+        },
+        "acl": {
+          "public": false,
+          "users": [],
+          "groups": [
+            "research"
+          ]
+        },
+        "parseAllowed": true,
+        "language": "mixed",
+        "fields": {
+          "category": "demo",
+          "status": "open"
+        }
+      },
+      "path": "sample.txt"
+    },
+    {
+      "item": {
+        "object": {
+          "domain": "demo",
+          "source": "files",
+          "nativeId": "md-001"
+        },
+        "version": 1,
+        "type": "document",
+        "deleted": false,
+        "updatedAt": "2026-11-05T00:00:00Z",
+        "title": "模拟样本 md-001",
+        "text": "",
+        "mediaType": "text/markdown",
+        "location": {
+          "uri": "engine-source://demo/files/md-001"
+        },
+        "acl": {
+          "public": false,
+          "users": [],
+          "groups": [
+            "research"
+          ]
+        },
+        "parseAllowed": true,
+        "language": "mixed",
+        "fields": {
+          "category": "demo",
+          "status": "open"
+        }
+      },
+      "path": "sample.md"
+    },
+    {
+      "item": {
+        "object": {
+          "domain": "demo",
+          "source": "files",
+          "nativeId": "pdf-001"
+        },
+        "version": 1,
+        "type": "document",
+        "deleted": false,
+        "updatedAt": "2026-11-05T00:00:00Z",
+        "title": "模拟样本 pdf-001",
+        "text": "",
+        "mediaType": "application/pdf",
+        "location": {
+          "uri": "engine-source://demo/files/pdf-001"
+        },
+        "acl": {
+          "public": false,
+          "users": [],
+          "groups": [
+            "research"
+          ]
+        },
+        "parseAllowed": true,
+        "language": "mixed",
+        "fields": {
+          "category": "demo",
+          "status": "open"
+        }
+      },
+      "path": "sample.pdf"
+    },
+    {
+      "item": {
+        "object": {
+          "domain": "demo",
+          "source": "files",
+          "nativeId": "docx-001"
+        },
+        "version": 1,
+        "type": "document",
+        "deleted": false,
+        "updatedAt": "2026-11-05T00:00:00Z",
+        "title": "模拟样本 docx-001",
+        "text": "",
+        "mediaType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "location": {
+          "uri": "engine-source://demo/files/docx-001"
+        },
+        "acl": {
+          "public": false,
+          "users": [],
+          "groups": [
+            "research"
+          ]
+        },
+        "parseAllowed": true,
+        "language": "mixed",
+        "fields": {
+          "category": "demo",
+          "status": "open"
+        }
+      },
+      "path": "sample.docx"
+    }
+  ]
+}
